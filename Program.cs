@@ -13,6 +13,7 @@ namespace snake_and_ladder
         static void Main(string[] args)
         {
             int player1 = 0;
+            int number_of_times = 0;
             Random rand = new Random();
             do
             {
@@ -27,7 +28,10 @@ namespace snake_and_ladder
                         break;
                     case 1:
                         Console.WriteLine("It is a ladder");
-                        player1 += random_number;
+                        if (player1 + random_number <= 100)
+                        {
+                            player1 += random_number;
+                        }
                         break;
                     case 2:
                         Console.WriteLine("It is a snake");
@@ -43,7 +47,7 @@ namespace snake_and_ladder
                         break;
                 }
 
-                if (player1 >= 100)
+                if (player1 >=100 )
                 {
                     Console.WriteLine("Game is finished ");
                     break;
@@ -54,9 +58,10 @@ namespace snake_and_ladder
                     Console.WriteLine(player1);
                     Console.WriteLine("\n");
                 }
-                
+                number_of_times++;
             }
             while (player1 <= 100);
+            Console.WriteLine("Number of times :" + number_of_times);
             Console.ReadLine();
         }
     }
