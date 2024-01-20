@@ -33,7 +33,7 @@ namespace snake_and_ladder
                         Console.WriteLine("It is a snake");
                         if (random_number > player1)
                         {
-                            Console.WriteLine("In this case player moves below 0, player go to intial position");     
+                            Console.WriteLine("In this case player moves below 0, player gpes ");     
                             player1 = 0;
                         }
                         else
@@ -42,11 +42,18 @@ namespace snake_and_ladder
                         }
                         break;
                 }
-                
-               
+
+                if (player1 >= 100)
+                {
+                    Console.WriteLine("Game is finished ");
+                    break;
+                }
+                else
+                {
                     Console.Write("player postiton is : ");
                     Console.WriteLine(player1);
                     Console.WriteLine("\n");
+                }
                 
             }
             while (player1 <= 100);
